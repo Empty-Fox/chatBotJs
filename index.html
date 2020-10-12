@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/chat.css" />    
+    <!-- <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+</head>
+
+<body>
+
+    <div id="chat-container">
+        <div id="search-container">
+            DIALOGUES
+        </div>
+        <div id='videoBlock' style="background-color: black; height: 100vh; z-index: 99; display: block;">
+            <div class="element-with-video-bg jquery-background-video-wrapper">
+                <video class="my-background-video jquery-background-video" loop autoplay muted>
+                    <source src="loading_bar.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div style="position: absolute; z-index: 999; margin-top: -10%; margin-left: 35%;">
+                <h3 style="color: white; font: 4em sans-serif; padding-bottom: 10px;">Enter your email!</h3>
+          <input type="email" name="email" id="email_input" placeholder="Your Email" required style="width: 350px; height: 30px;">  
+          <div id='email-error'></div>
+          <br>
+          <div class="button_block"  style="width: 250px; margin-left: 50px; 
+          text-align: center;
+          padding-top: 2px;
+          font-size: 2em;
+          height: 30px; background-color: rgb(4, 138, 216);
+          color: white;"
+          id="js-final-click" >
+            <a class="button yes_btn">send</a>
+          </div>
+        </div>
+        </div>
+
+        <div id="conversation-list">
+            <div class="conversation conversation1 active">
+
+                <img src="images/profiles/1.png" class="" alt="Daryl Duckmanton">
+
+                <div class="signalPresent" id="signalPresent1"></div>
+                <div class="signalMessage" id="signalMessage1">1</div>
+                <div class="title-text " id="title-text1">
+                    name1
+                </div>
+
+
+                <div class="conersation-message " id="conersation-message1">
+                  
+                </div>
+            </div>
+            <div class="conversation conversation2">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent2"></div>
+                <div class="signalMessage"  id="signalMessage2">1</div>
+                <div class="title-text name">
+                </div>
+                <div class="conersation-message message_profiles" id="conersation-message2">
+
+                </div>
+            </div>
+            <div class="conversation conversation3">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent3"></div>
+                <div class="signalMessage"  id="signalMessage3">1</div>
+                <div class="title-text name"></div>
+                <div class="conersation-message message_profiles" id="conersation-message3"></div>
+            </div>
+            <div class="conversation conversation4">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent4"></div>
+                <div class="signalMessage"  id="signalMessage4">1</div>
+                <div class="title-text name"></div>
+                <div class="conersation-message message_profiles" id="conersation-message4"></div>
+            </div>
+            <div class="conversation conversation5">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent5"></div>
+                <div class="signalMessage"  id="signalMessage5">1</div>
+                <div class="title-text name"></div>
+                <div class="conersation-message message_profiles" id="conersation-message5">
+                </div>
+            </div>
+            <div class="conversation conversation6">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent6"></div>
+                <div class="signalMessage"  id="signalMessage6">1</div>
+                <div class="title-text name"></div>
+                <div class="conersation-message message_profiles" id="conersation-message6"></div>
+            </div>
+            <div class="conversation conversation7">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent7"></div>
+                <div class="signalMessage"  id="signalMessage7">1</div>
+                <div class="title-text name"></div>
+                <div class="conersation-message message_profiles" id="conersation-message7"></div>
+            </div>
+            <div class="conversation conversation8">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent8"></div>
+                <div class="signalMessage"  id="signalMessage8">1</div>
+                <div class="title-text name"></div>
+                <div class="conersation-message message_profiles" id="conersation-message8"></div>
+            </div>
+            <div class="conversation conversation9">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent9"></div>
+                <div class="signalMessage"  id="signalMessage9">1</div>
+                <div class="title-text name"></div>
+                <div class="conersation-message message_profiles" id="conersation-message9"></div>
+            </div>
+            <div class="conversation conversation10">
+                <img src="" class="image_profiles" alt="Daryl Duckmanton">
+                <div class="signalPresent" id="signalPresent10"></div>
+                <div class="signalMessage"  id="signalMessage10">1</div>
+                <div class="title-text name"> </div>
+                <div class="conersation-message message_profiles" id="conersation-message10"></div>
+            </div>
+        </div>
+
+        <div id="new-message-container">
+            <!-- <a href="#">+</a> -->
+        </div>
+
+
+        <div id="chat-title">
+            <img src="images/profiles/1.png" class="image_profiles1" style="display: block;" alt="users photo">
+            <img src="" class="image_prof image_profiles2" style="display: none;" alt="users photo">
+            <img src="" class="image_prof image_profiles3" style="display: none;" alt="users photo">
+            <img src="" class="image_prof image_profiles4" style="display: none;" alt="users photo">
+            <img src="" class="image_prof image_profiles5" style="display: none;" alt="users photo">
+            <img src="" class="image_prof image_profiles6" style="display: none;" alt="users photo">
+            <img src="" class="image_prof image_profiles7" style="display: none;" alt="users photo">
+            <img src="" class="image_prof image_profiles8" style="display: none;" alt="users photo">
+            <img src="" class="image_prof image_profiles9" style="display: none;" alt="users photo">
+            <img src="" class="image_prof image_profiles10" style="display: none;" alt="users photo">
+
+
+
+            <span class="chat-title chat-title1" style="display: block;">name1</span>
+            <span class="chat-title chat-title2 namepro" style="display: none;"></span>
+            <span class="chat-title chat-title3 namepro" style="display: none;"></span>
+            <span class="chat-title chat-title4 namepro" style="display: none;"></span>
+            <span class="chat-title chat-title5 namepro" style="display: none;"></span>
+            <span class="chat-title chat-title6 namepro" style="display: none;"></span>
+            <span class="chat-title chat-title7 namepro" style="display: none;"></span>
+            <span class="chat-title chat-title8 namepro" style="display: none;"></span>
+            <span class="chat-title chat-title9 namepro" style="display: none;"></span>
+            <span class="chat-title chat-title10 namepro" style="display: none;"></span>
+
+
+
+        </div>
+
+        <div id="chat-message-list">
+
+            <div id="container1" class="container1">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="images/profiles/1.png" class="message_content_photo1" alt="name1"
+                            style="display: block;">
+                        <div class="message-text " id="message-text">How you doing :)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="container2" class="container2" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class="message_content_photo2 content_photo" alt="name2" style="display: block;">
+                        <div class="message-text message-text_other" id="">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="container3" class="container3" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class="message_content_photo3 content_photo" alt="name3" style="display: block;">
+                        <div class="message-text message-text_other" id="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="container4" class="container4" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class="message_content_photo4 content_photo" alt="name4" style="display: block;">
+                        <div class="message-text  message-text_other" >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="container5" class="container5" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class="message_content_photo5 content_photo" alt="name5" style="display: block;">
+                        <div class="message-text  message-text_other">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="container6" class="container6" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class="message_content_photo6 content_photo" alt="name6" style="display: block;">
+                        <div class="message-text  message-text_other">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="container7" class="container7" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class="message_content_photo7 content_photo" alt="name7" style="display: block;">
+                        <div class="message-text  message-text_other">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="container8" class="container8" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class="message_content_photo8 content_photo" alt="name8" style="display: block;">
+                        <div class="message-text message-text_other">
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div id="container9" class="container9" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class="message_content_photo9 content_photo" alt="name9" style="display: block;">
+                        <div class="message-text message-text_other" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="container10" class="container10" style="display: none;">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="" class=" content_photo message_content_photo10" alt="name10" style="display: block;">
+                        <div class="message-text message-text_other">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="chat-form">
+            <input type="text" placeholder="type a message" id="myTextField" class="enter_mes">
+            <img src="images/send-png-md.png" alt="Add Attachment" id="id" onclick="enterMessage()">
+        </div>
+
+
+    </div>
+<div id="opacityBlock" style="background-color: rgba(0, 0, 0, 0.5); position: absolute;z-index: 9; width: 100%; height: 100vh; display: block;"></div>
+<script>
+    
+</script>
+
+    <script async src="js/data1.json"></script>
+    <script async src="js/data.js"></script>
+    <script async src="js/switching.js"></script>    
+    <script src="js/jquery.background-video.js"></script>
+</body>
+
+</html>

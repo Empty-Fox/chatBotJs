@@ -1,0 +1,27 @@
+{
+    "name":["name2","name3","name4","name5","name6","name7","name8","name9","name10"],
+    "photoProfiles":["images/profiles/2.png","images/profiles/3.png","images/profiles/4.png","images/profiles/5.png","images/profiles/6.png","images/profiles/7.png","images/profiles/8.png","images/profiles/9.png","images/profiles/10.png"],
+    "textProfiles":[       
+        "text2...",
+        "Text3.....",
+        "Text4.....",
+        "Text5.....",
+        "Text6.....",
+        "Text7.....",
+        "Text8.....",
+        "Text9.....",
+        "Text10....."
+    ],
+    "textProfilesFullVersion":[       
+        "text2",
+        "Text3",
+        "Text4",
+        "Text5",
+        "Text6",
+        "Text7",
+        "Text8",
+        "Text9",
+        "Text10"
+    ]
+  
+}
