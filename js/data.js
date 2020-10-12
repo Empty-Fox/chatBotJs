@@ -1,39 +1,56 @@
-var xmlhttp = new XMLHttpRequest();
 
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myObj = JSON.parse(this.responseText);
-    var name =document.querySelectorAll('.name');
-    var image_profiles = document.querySelectorAll(".image_profiles");
-    var textProfiles = document.querySelectorAll(".message_profiles");
-    var profile_name =document.querySelectorAll(".namepro");
-    var profile_image = document.querySelectorAll(".image_prof");
-    var photoInsideMessage=document.querySelectorAll(".content_photo");
-    var messageTextFirst = document.querySelectorAll(".message-text_other");
- 
+  var namepr=["name2","name3","name4","name5","name6","name7","name8","name9","name10"];
+  var photoProfilespr = ["images/profiles/2.png","images/profiles/3.png","images/profiles/4.png","images/profiles/5.png","images/profiles/6.png","images/profiles/7.png","images/profiles/8.png","images/profiles/9.png","images/profiles/10.png"];
+  var textProfilespr = [       
+      "text2...",
+      "Text3.....",
+      "Text4.....",
+      "Text5.....",
+      "Text6.....",
+      "Text7.....",
+      "Text8.....",
+      "Text9.....",
+      "Text10....."
+  ]
+  var textProfilesFullVersionpr =[       
+      "text2",
+      "Text3",
+      "Text4",
+      "Text5",
+      "Text6",
+      "Text7",
+      "Text8",
+      "Text9",
+      "Text10"
+  ]
 
-    var a=_.shuffle(_.range(0,9)).slice(0,9);   
-    var b=_.shuffle(_.range(0,9)).slice(0,9);  
-    for (var i = 0; i < name.length; i++) {        
-      name[i].innerText=myObj.name[a[i]];
-      image_profiles[i].src=myObj.photoProfiles[a[i]];   
-      profile_name[i].innerText=myObj.name[a[i]];
-      profile_image[i].src=myObj.photoProfiles[a[i]];
-       photoInsideMessage[i].src=myObj.photoProfiles[a[i]];
 
-    }
-    i++;
-    for (var j = 0; j < textProfiles.length; j++) {        
-      textProfiles[j].innerText=myObj.textProfiles[b[j]];
-      messageTextFirst[j].innerText=myObj.textProfilesFullVersion[b[j]];
-     
-    }
-    j++;
-    
-  }
-};
-xmlhttp.open("GET", "data1.json", true);
-xmlhttp.send();
+      var nameprofileleft =document.querySelectorAll('.name');
+      var image_profiles = document.querySelectorAll(".image_profiles");
+      var textProfiles = document.querySelectorAll(".message_profiles");
+      var profile_name =document.querySelectorAll(".namepro");
+      var profile_image = document.querySelectorAll(".image_prof");
+      var photoInsideMessage=document.querySelectorAll(".content_photo");
+      var messageTextFirst = document.querySelectorAll(".message-text_other");
+
+
+
+          var a=_.shuffle(_.range(0,9)).slice(0,9);   
+          var b=_.shuffle(_.range(0,9)).slice(0,9);  
+          for (var i = 0; i < namepr.length; i++) {        
+          nameprofileleft[i].innerText=namepr[a[i]];       
+          profile_name[i].innerText=namepr[a[i]];
+          image_profiles[i].src=photoProfilespr[a[i]]; 
+          profile_image[i].src=photoProfilespr[a[i]];
+          photoInsideMessage[i].src=photoProfilespr[a[i]];
+          }
+          i++;
+          for (var j = 0; j < textProfiles.length; j++) {        
+            textProfiles[j].innerText=textProfilespr[b[j]];
+            messageTextFirst[j].innerText=textProfilesFullVersionpr[b[j]];
+          }
+          j++;
+
 
 ///////////////////////////Active class/////////////////
 
@@ -69,6 +86,8 @@ var botMessage = [
   ["10Яблоко1", "10Апельсин2", "10Слива3", "10Яблоко4", "10Апельсин5","10Яблоко6", "10Апельсин7", "10Слива8", "10Яблоко9", "10Апельсин10","10Яблоко11", "10Апельсин12", "10Слива13", "10Яблоко14", "10Апельсин15","10Яблоко16", "10Апельсин17", "10Слива18", "10Яблоко19", "10Апельсин20"]
 ];
 
+
+
 ///////////////////////////////////Text for Long wait message/////////////////////////
 var botMessageTimer = [
   "11111",'222222'
@@ -81,7 +100,7 @@ function changeSignal(){
   var rand1 =Math.floor(Math.random() * 10)+1;
 
   if(signal[rand1].style.opacity=1){
-    return signal[rand1].style.opacity=0;
+    signal[rand1].style.opacity=0;
    }    
 }
 changeSignal();
@@ -247,7 +266,7 @@ function addMessageBot(classList, message) {
   messageContent.appendChild(messageText);
 
   if(document.querySelector('.conversation1').classList.contains('active')){
-    
+    document.getElementById('signalMessage1').style.opacity=0;
     if(!document.getElementById('signalPresent1').style.opacity){
       clicks1 += 1;  
       document.getElementById('container1').appendChild(messageRow);
@@ -264,7 +283,7 @@ function addMessageBot(classList, message) {
   } 
 
   if(document.querySelector('.conversation2').classList.contains('active')){
-    
+    document.getElementById('signalMessage2').style.opacity=0;
     if(!document.getElementById('signalPresent2').style.opacity){
       clicks2 += 1;
       document.getElementById('container2').appendChild(messageRow);
@@ -282,6 +301,7 @@ function addMessageBot(classList, message) {
   }
 
   if(document.querySelector('.conversation3').classList.contains('active')){
+    document.getElementById('signalMessage3').style.opacity=0;
     if(!document.getElementById('signalPresent3').style.opacity){
     clicks3 += 1;
     document.getElementById('container3').appendChild(messageRow);
@@ -297,6 +317,7 @@ function addMessageBot(classList, message) {
   }
 
   if(document.querySelector('.conversation4').classList.contains('active')){
+    document.getElementById('signalMessage4').style.opacity=0;
     if(!document.getElementById('signalPresent4').style.opacity){
       clicks4 += 1;
       document.getElementById('container4').appendChild(messageRow);
@@ -312,6 +333,7 @@ function addMessageBot(classList, message) {
   }
 
   if(document.querySelector('.conversation5').classList.contains('active')){
+    document.getElementById('signalMessage5').style.opacity=0;
     if(!document.getElementById('signalPresent5').style.opacity){
       clicks5 += 1;
       document.getElementById('container5').appendChild(messageRow);
@@ -329,6 +351,7 @@ function addMessageBot(classList, message) {
   }
 
   if(document.querySelector('.conversation6').classList.contains('active')){
+    document.getElementById('signalMessage6').style.opacity=0;
     if(!document.getElementById('signalPresent6').style.opacity){
       clicks6 += 1;
       document.getElementById('container6').appendChild(messageRow);
@@ -347,6 +370,8 @@ function addMessageBot(classList, message) {
   }
 
   if(document.querySelector('.conversation7').classList.contains('active')){
+    document.getElementById('signalMessage7').style.opacity=0;
+    
     if(!document.getElementById('signalPresent7').style.opacity){
       clicks7 += 1;      
       document.getElementById('container7').appendChild(messageRow);
@@ -362,6 +387,7 @@ function addMessageBot(classList, message) {
   }
 
   if(document.querySelector('.conversation8').classList.contains('active')){
+    document.getElementById('signalMessage8').style.opacity=0;
     if(!document.getElementById('signalPresent8').style.opacity){
       clicks8 += 1;
       document.getElementById('container8').appendChild(messageRow);
@@ -381,6 +407,8 @@ function addMessageBot(classList, message) {
   }
 
   if(document.querySelector('.conversation9').classList.contains('active')){
+    document.getElementById('signalMessage9').style.opacity=0;
+
     if(!document.getElementById('signalPresent9').style.opacity){
       clicks9 += 1;
       document.getElementById('container9').appendChild(messageRow);
@@ -397,6 +425,7 @@ function addMessageBot(classList, message) {
     
   }
   if(document.querySelector('.conversation10').classList.contains('active')){
+    document.getElementById('signalMessage10').style.opacity=0;
     if(!document.getElementById('signalPresent10').style.opacity){
       clicks10 += 1;
       document.getElementById('container10').appendChild(messageRow);
