@@ -2,12 +2,12 @@
 // 	$('.my-background-video').bgVideo();
 // });
 
-var openChat1 = document.getElementById('chat-title');
-var openChat2 = document.getElementById('chat-message-list');
-var openChat3 = document.getElementById('chat-form');
-openChat1.style.display='grid';
-openChat2.style.display='flex';
-openChat3.style.display='grid';
+// var openChat1 = document.getElementById('chat-title');
+// var openChat2 = document.getElementById('chat-message-list');
+// var openChat3 = document.getElementById('chat-form');
+// openChat1.style.display='grid';
+// openChat2.style.display='flex';
+// openChat3.style.display='grid';
 
   
   var finalClick = document.getElementById("js-final-click");
@@ -26,12 +26,12 @@ openChat3.style.display='grid';
       $result.text("");   
   
       if (validateEmail(email)) { 
-        //   console.log('click');
-        // videoBlock.style.display='none';  
-        // opacityBlock.style.display='none'; 
-        // openChat1.style.display='grid';
-        // openChat2.style.display='flex';
-        // openChat3.style.display='grid';
+          console.log('click');
+        videoBlock.style.display='none';  
+        opacityBlock.style.display='none'; 
+        openChat1.style.display='grid';
+        openChat2.style.display='flex';
+        openChat3.style.display='grid';
        
       
           //apiRequestCustomer(email, location, country);
